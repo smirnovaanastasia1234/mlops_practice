@@ -1,0 +1,6 @@
+echo "----Train the Model (begin)-----"
+python3 /home/vagrant/project/train_model.py
+echo "----Train the Model (end)-----"
+echo "----Use the Model for Prediction (begin)-----"
+python3 /home/vagrant/project/make_prediction.py
+echo "----Use the Model for Prediction (begin)-----"
