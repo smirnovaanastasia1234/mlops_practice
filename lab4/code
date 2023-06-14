@@ -1,0 +1,640 @@
+anastasia@anastasia-VirtualBox:~$ cd git/lab4/
+anastasia@anastasia-VirtualBox:~/git/lab4$ git status
+Текущая ветка: master
+Изменения, которые не в индексе для коммита:
+  (используйте «git add <файл>...», чтобы добавить файл в индекс)
+  (используйте «git restore <файл>...», чтобы отменить изменения в рабочем каталоге)
+	изменено:      .dvc/config
+
+Неотслеживаемые файлы:
+  (используйте «git add <файл>...», чтобы добавить в то, что будет включено в коммит)
+	.gitignore
+	datasets.txt
+	google-cloud-cli-402.0.0-linux-x86_64.tar.gz
+	google-cloud-sdk/
+	scpipt.py
+	script.py
+	script2.py
+	script3.py
+	script4.py
+
+индекс пуст (используйте «git add» и/или «git commit -a»)
+anastasia@anastasia-VirtualBox:~/git/lab4$ git commit -m "df3"
+Текущая ветка: master
+Изменения, которые не в индексе для коммита:
+  (используйте «git add <файл>...», чтобы добавить файл в индекс)
+  (используйте «git restore <файл>...», чтобы отменить изменения в рабочем каталоге)
+	изменено:      .dvc/config
+
+Неотслеживаемые файлы:
+  (используйте «git add <файл>...», чтобы добавить в то, что будет включено в коммит)
+	.gitignore
+	datasets.txt
+	google-cloud-cli-402.0.0-linux-x86_64.tar.gz
+	google-cloud-sdk/
+	scpipt.py
+	script.py
+	script2.py
+	script3.py
+	script4.py
+
+индекс пуст (используйте «git add» и/или «git commit -a»)
+anastasia@anastasia-VirtualBox:~/git/lab4$ dvc remote add mydf gdrive://1qCufay9X2d_I0G-wnHfsPz77uY4Ba7pY
+ERROR: configuration error - config file error: remote 'mydf' already exists. Use `-f|--force` to overwrite it.
+anastasia@anastasia-VirtualBox:~/git/lab4$ dvc remote add -f mydf gdrive://1qCufay9X2d_I0G-wnHfsPz77uY4Ba7pY
+anastasia@anastasia-VirtualBox:~/git/lab4$ dvc remote list
+mydf	gdrive://1qCufay9X2d_I0G-wnHfsPz77uY4Ba7pY
+anastasia@anastasia-VirtualBox:~/git/lab4$ git status
+Текущая ветка: master
+Изменения, которые не в индексе для коммита:
+  (используйте «git add <файл>...», чтобы добавить файл в индекс)
+  (используйте «git restore <файл>...», чтобы отменить изменения в рабочем каталоге)
+	изменено:      .dvc/config
+
+Неотслеживаемые файлы:
+  (используйте «git add <файл>...», чтобы добавить в то, что будет включено в коммит)
+	.gitignore
+	datasets.txt
+	google-cloud-cli-402.0.0-linux-x86_64.tar.gz
+	google-cloud-sdk/
+	scpipt.py
+	script.py
+	script2.py
+	script3.py
+	script4.py
+
+индекс пуст (используйте «git add» и/или «git commit -a»)
+anastasia@anastasia-VirtualBox:~/git/lab4$ git add .dvc/config
+anastasia@anastasia-VirtualBox:~/git/lab4$ git commit -m "df"
+[master ab19ba7] df
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+anastasia@anastasia-VirtualBox:~/git/lab4$ dvc push -r mydf
+  0% Querying remote cache|                         |0/1 [00:00<?,    ?files/s]/home/anastasia/.local/lib/python3.10/site-packages/oauth2client/_helpers.py:255: UserWarning: Cannot access /home/anastasia/.cache/pydrive2fs/710796635688-iivsgbgsb6uv1fap6635dhvuei09o66c.apps.googleusercontent.com/default.json: No such file or directory
+  warnings.warn(_MISSING_FILE_MESSAGE.format(filename))
+Your browser has been opened to visit:
+
+    https://accounts.google.com/o/oauth2/auth?client_id=710796635688-iivsgbgsb6uv1fap6635dhvuei09o66c.apps.googleusercontent.com&redirect_uri=http%3A%2F%2Flocalhost%3A8080%2F&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fdrive+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fdrive.appdata&access_type=offline&response_type=code&approval_prompt=force
+
+Authentication successful.
+2 files pushed                                                                 
+anastasia@anastasia-VirtualBox:~/git/lab4$ touch script.py
+anastasia@anastasia-VirtualBox:~/git/lab4$ nano script.py
+anastasia@anastasia-VirtualBox:~/git/lab4$ nano script.py
+anastasia@anastasia-VirtualBox:~/git/lab4$ pip install pandas
+Defaulting to user installation because normal site-packages is not writeable
+Requirement already satisfied: pandas in /usr/local/lib/python3.10/dist-packages (2.0.2)
+Requirement already satisfied: python-dateutil>=2.8.2 in /usr/local/lib/python3.10/dist-packages (from pandas) (2.8.2)
+Requirement already satisfied: pytz>=2020.1 in /usr/lib/python3/dist-packages (from pandas) (2022.1)
+Requirement already satisfied: tzdata>=2022.1 in /usr/local/lib/python3.10/dist-packages (from pandas) (2023.3)
+Requirement already satisfied: numpy>=1.21.0 in /usr/local/lib/python3.10/dist-packages (from pandas) (1.24.3)
+Requirement already satisfied: six>=1.5 in /usr/lib/python3/dist-packages (from python-dateutil>=2.8.2->pandas) (1.16.0)
+anastasia@anastasia-VirtualBox:~/git/lab4$ sudo chmod a+x script.py
+[sudo] пароль для anastasia: 
+anastasia@anastasia-VirtualBox:~/git/lab4$ git init
+Переинициализирован существующий репозиторий Git в /home/anastasia/git/lab4/.git/
+anastasia@anastasia-VirtualBox:~/git/lab4$ git status
+Текущая ветка: master
+Неотслеживаемые файлы:
+  (используйте «git add <файл>...», чтобы добавить в то, что будет включено в коммит)
+	.gitignore
+	datasets.txt
+	google-cloud-cli-402.0.0-linux-x86_64.tar.gz
+	google-cloud-sdk/
+	scpipt.py
+	script.py
+	script2.py
+	script3.py
+	script4.py
+
+индекс пуст, но есть неотслеживаемые файлы
+(используйте «git add», чтобы проиндексировать их)
+anastasia@anastasia-VirtualBox:~/git/lab4$ git commit -m "df"
+Текущая ветка: master
+Неотслеживаемые файлы:
+  (используйте «git add <файл>...», чтобы добавить в то, что будет включено в коммит)
+	.gitignore
+	datasets.txt
+	google-cloud-cli-402.0.0-linux-x86_64.tar.gz
+	google-cloud-sdk/
+	scpipt.py
+	script.py
+	script2.py
+	script3.py
+	script4.py
+
+индекс пуст, но есть неотслеживаемые файлы
+(используйте «git add», чтобы проиндексировать их)
+anastasia@anastasia-VirtualBox:~/git/lab4$ git commit -m "df"
+Текущая ветка: master
+Неотслеживаемые файлы:
+  (используйте «git add <файл>...», чтобы добавить в то, что будет включено в коммит)
+	.gitignore
+	datasets.txt
+	google-cloud-cli-402.0.0-linux-x86_64.tar.gz
+	google-cloud-sdk/
+	scpipt.py
+	script.py
+	script2.py
+	script3.py
+	script4.py
+
+индекс пуст, но есть неотслеживаемые файлы
+(используйте «git add», чтобы проиндексировать их)
+anastasia@anastasia-VirtualBox:~/git/lab4$ gitt add .dvc/config
+Команда «gitt» не найдена. Возможно, вы имели в виду:
+  command 'gita' from deb gita (0.16.2-1)
+  command 'gitit' from deb gitit (0.13.0.0+dfsg-2build5)
+  command 'gist' from deb yorick (2.2.04+dfsg1-12)
+  command 'gitk' from deb gitk (1:2.34.1-1ubuntu1.9)
+  command 'git' from deb git (1:2.34.1-1ubuntu1.9)
+  command 'gitg' from deb gitg (41-2)
+Try: sudo apt install <deb name>
+anastasia@anastasia-VirtualBox:~/git/lab4$ git add .dvc/config
+anastasia@anastasia-VirtualBox:~/git/lab4$ git commit -m "df"
+Текущая ветка: master
+Неотслеживаемые файлы:
+  (используйте «git add <файл>...», чтобы добавить в то, что будет включено в коммит)
+	.gitignore
+	datasets.txt
+	google-cloud-cli-402.0.0-linux-x86_64.tar.gz
+	google-cloud-sdk/
+	scpipt.py
+	script.py
+	script2.py
+	script3.py
+	script4.py
+
+индекс пуст, но есть неотслеживаемые файлы
+(используйте «git add», чтобы проиндексировать их)
+anastasia@anastasia-VirtualBox:~/git/lab4$ dvc push -r mydf
+Everything is up to date.                                                      
+anastasia@anastasia-VirtualBox:~/git/lab4$ ./script.py
+./script.py: строка 1: import: команда не найдена
+./script.py: строка 2: from: команда не найдена
+./script.py: строка 4: синтаксическая ошибка рядом с неожиданным маркером «(»
+./script.py: строка 4: `train_df, _ = titanic()'
+anastasia@anastasia-VirtualBox:~/git/lab4$ pip install catboost
+Defaulting to user installation because normal site-packages is not writeable
+Requirement already satisfied: catboost in /home/anastasia/.local/lib/python3.10/site-packages (1.2)
+Requirement already satisfied: graphviz in /home/anastasia/.local/lib/python3.10/site-packages (from catboost) (0.20.1)
+Requirement already satisfied: matplotlib in /usr/local/lib/python3.10/dist-packages (from catboost) (3.7.1)
+Requirement already satisfied: numpy>=1.16.0 in /usr/local/lib/python3.10/dist-packages (from catboost) (1.24.3)
+Requirement already satisfied: pandas>=0.24 in /usr/local/lib/python3.10/dist-packages (from catboost) (2.0.2)
+Requirement already satisfied: scipy in /home/anastasia/.local/lib/python3.10/site-packages (from catboost) (1.10.1)
+Requirement already satisfied: plotly in /home/anastasia/.local/lib/python3.10/site-packages (from catboost) (5.15.0)
+Requirement already satisfied: six in /usr/lib/python3/dist-packages (from catboost) (1.16.0)
+Requirement already satisfied: python-dateutil>=2.8.2 in /usr/local/lib/python3.10/dist-packages (from pandas>=0.24->catboost) (2.8.2)
+Requirement already satisfied: pytz>=2020.1 in /usr/lib/python3/dist-packages (from pandas>=0.24->catboost) (2022.1)
+Requirement already satisfied: tzdata>=2022.1 in /usr/local/lib/python3.10/dist-packages (from pandas>=0.24->catboost) (2023.3)
+Requirement already satisfied: contourpy>=1.0.1 in /usr/local/lib/python3.10/dist-packages (from matplotlib->catboost) (1.0.7)
+Requirement already satisfied: cycler>=0.10 in /usr/local/lib/python3.10/dist-packages (from matplotlib->catboost) (0.11.0)
+Requirement already satisfied: fonttools>=4.22.0 in /usr/local/lib/python3.10/dist-packages (from matplotlib->catboost) (4.39.4)
+Requirement already satisfied: kiwisolver>=1.0.1 in /usr/local/lib/python3.10/dist-packages (from matplotlib->catboost) (1.4.4)
+Requirement already satisfied: packaging>=20.0 in /usr/local/lib/python3.10/dist-packages (from matplotlib->catboost) (23.1)
+Requirement already satisfied: pillow>=6.2.0 in /usr/lib/python3/dist-packages (from matplotlib->catboost) (9.0.1)
+Requirement already satisfied: pyparsing>=2.3.1 in /usr/lib/python3/dist-packages (from matplotlib->catboost) (2.4.7)
+Requirement already satisfied: tenacity>=6.2.0 in /usr/local/lib/python3.10/dist-packages (from plotly->catboost) (8.2.2)
+anastasia@anastasia-VirtualBox:~/git/lab4$ ./script.py
+./script.py: строка 1: import: команда не найдена
+./script.py: строка 2: from: команда не найдена
+./script.py: строка 4: синтаксическая ошибка рядом с неожиданным маркером «(»
+./script.py: строка 4: `train_df, _ = titanic()'
+anastasia@anastasia-VirtualBox:~/git/lab4$ pip install python3
+Defaulting to user installation because normal site-packages is not writeable
+ERROR: Could not find a version that satisfies the requirement python3 (from versions: none)
+ERROR: No matching distribution found for python3
+anastasia@anastasia-VirtualBox:~/git/lab4$ python3 --version
+Python 3.10.6
+anastasia@anastasia-VirtualBox:~/git/lab4$ python3 .script.py
+python3: can't open file '/home/anastasia/git/lab4/.script.py': [Errno 2] No such file or directory
+anastasia@anastasia-VirtualBox:~/git/lab4$ python3 ./script.py
+anastasia@anastasia-VirtualBox:~/git/lab4$ git status
+Текущая ветка: master
+Неотслеживаемые файлы:
+  (используйте «git add <файл>...», чтобы добавить в то, что будет включено в коммит)
+	.gitignore
+	datasets.txt
+	google-cloud-cli-402.0.0-linux-x86_64.tar.gz
+	google-cloud-sdk/
+	scpipt.py
+	script.py
+	script2.py
+	script3.py
+	script4.py
+
+индекс пуст, но есть неотслеживаемые файлы
+(используйте «git add», чтобы проиндексировать их)
+anastasia@anastasia-VirtualBox:~/git/lab4$ git add df.csv
+fatal: спецификатор пути «df.csv» не соответствует ни одному файлу
+anastasia@anastasia-VirtualBox:~/git/lab4$ cat datasets.dvc
+outs:
+- md5: 9c9e010d74a357306276fa53cbf256d0.dir
+  size: 62002
+  nfiles: 1
+  path: datasets
+anastasia@anastasia-VirtualBox:~/git/lab4$ git add df.csv
+anastasia@anastasia-VirtualBox:~/git/lab4$ git commit -m "df"
+[master b41fcee] df
+ 1 file changed, 892 insertions(+)
+ create mode 100644 df.csv
+anastasia@anastasia-VirtualBox:~/git/lab4$ dvc push -r mydf
+Everything is up to date.                                                      
+anastasia@anastasia-VirtualBox:~/git/lab4$ cat datasets.dvc
+outs:
+- md5: 9c9e010d74a357306276fa53cbf256d0.dir
+  size: 62002
+  nfiles: 1
+  path: datasets
+anastasia@anastasia-VirtualBox:~/git/lab4$ dvc add datasets
+100% Adding...|███████████████████████████████████████|1/1 [00:00, 16.82file/s]
+                                                                               
+To track the changes with git, run:
+
+	git add datasets.dvc
+
+To enable auto staging, run:
+
+	dvc config core.autostage true
+anastasia@anastasia-VirtualBox:~/git/lab4$ cat datasets.dvc
+outs:
+- md5: 9c9e010d74a357306276fa53cbf256d0.dir
+  size: 62002
+  nfiles: 1
+  path: datasets
+anastasia@anastasia-VirtualBox:~/git/lab4$ dvc push -r mydf
+Everything is up to date.                                                      
+anastasia@anastasia-VirtualBox:~/git/lab4$ touch script2.py
+anastasia@anastasia-VirtualBox:~/git/lab4$ nano script2.py
+anastasia@anastasia-VirtualBox:~/git/lab4$ python3 ./script2.py
+anastasia@anastasia-VirtualBox:~/git/lab4$ git status
+Текущая ветка: master
+Неотслеживаемые файлы:
+  (используйте «git add <файл>...», чтобы добавить в то, что будет включено в коммит)
+	.gitignore
+	datasets.txt
+	google-cloud-cli-402.0.0-linux-x86_64.tar.gz
+	google-cloud-sdk/
+	scpipt.py
+	script.py
+	script2.py
+	script3.py
+	script4.py
+
+индекс пуст, но есть неотслеживаемые файлы
+(используйте «git add», чтобы проиндексировать их)
+anastasia@anastasia-VirtualBox:~/git/lab4$ git commit -a -m "df2"
+Текущая ветка: master
+Неотслеживаемые файлы:
+  (используйте «git add <файл>...», чтобы добавить в то, что будет включено в коммит)
+	.gitignore
+	datasets.txt
+	google-cloud-cli-402.0.0-linux-x86_64.tar.gz
+	google-cloud-sdk/
+	scpipt.py
+	script.py
+	script2.py
+	script3.py
+	script4.py
+
+индекс пуст, но есть неотслеживаемые файлы
+(используйте «git add», чтобы проиндексировать их)
+anastasia@anastasia-VirtualBox:~/git/lab4$ dvc push -r mydf
+Everything is up to date.                                                      
+anastasia@anastasia-VirtualBox:~/git/lab4$ dvc add datasets
+100% Adding...|███████████████████████████████████████|1/1 [00:00, 11.98file/s]
+                                                                               
+To track the changes with git, run:
+
+	git add datasets.dvc
+
+To enable auto staging, run:
+
+	dvc config core.autostage true
+anastasia@anastasia-VirtualBox:~/git/lab4$ git status
+Текущая ветка: master
+Изменения, которые не в индексе для коммита:
+  (используйте «git add <файл>...», чтобы добавить файл в индекс)
+  (используйте «git restore <файл>...», чтобы отменить изменения в рабочем каталоге)
+	изменено:      datasets.dvc
+
+Неотслеживаемые файлы:
+  (используйте «git add <файл>...», чтобы добавить в то, что будет включено в коммит)
+	.gitignore
+	datasets.txt
+	google-cloud-cli-402.0.0-linux-x86_64.tar.gz
+	google-cloud-sdk/
+	scpipt.py
+	script.py
+	script2.py
+	script3.py
+	script4.py
+
+индекс пуст (используйте «git add» и/или «git commit -a»)
+anastasia@anastasia-VirtualBox:~/git/lab4$ ls -la
+итого 94188
+drwxrwxr-x 6 anastasia anastasia     4096 июн 14 22:24 .
+drwxrwxr-x 4 anastasia anastasia     4096 июн 14 13:10 ..
+drwxrwxr-x 2 anastasia anastasia     4096 июн 14 22:24 datasets
+-rw-rw-r-- 1 anastasia anastasia       93 июн 14 22:24 datasets.dvc
+-rw-r--r-- 1 root      root            93 июн 14 16:30 datasets.txt
+-rw-rw-r-- 1 anastasia anastasia    62002 июн 14 20:34 df.csv
+drwxrwxr-x 4 anastasia anastasia     4096 июн 14 16:52 .dvc
+-rw-rw-r-- 1 anastasia anastasia      139 июн 14 13:11 .dvcignore
+drwxrwxr-x 8 anastasia anastasia     4096 июн 14 22:25 .git
+-rw-rw-r-- 1 anastasia anastasia       10 июн 14 16:52 .gitignore
+-rw-rw-r-- 1 anastasia anastasia 96320036 сен 13  2022 google-cloud-cli-402.0.0-linux-x86_64.tar.gz
+drwxrwxr-x 9 anastasia anastasia     4096 июн 14 18:44 google-cloud-sdk
+-rw-rw-r-- 1 anastasia anastasia      128 июн 14 16:01 scpipt.py
+-rw-rw-r-- 1 anastasia anastasia      135 июн 14 22:22 script2.py
+-rw-rw-r-- 1 anastasia anastasia      180 июн 14 18:52 script3.py
+-rw-rw-r-- 1 anastasia anastasia      363 июн 14 19:08 script4.py
+-rwxrwxr-x 1 anastasia anastasia      131 июн 14 20:25 script.py
+anastasia@anastasia-VirtualBox:~/git/lab4$ git log --oneline
+b41fcee (HEAD -> master) df
+ab19ba7 df
+e737c25 df4
+bcbda81 Google Disk
+f81b76a Init dvc
+7d6a8e1 df
+8a1c4a3 df
+anastasia@anastasia-VirtualBox:~/git/lab4$ git commit -m "df2"
+Текущая ветка: master
+Изменения, которые не в индексе для коммита:
+  (используйте «git add <файл>...», чтобы добавить файл в индекс)
+  (используйте «git restore <файл>...», чтобы отменить изменения в рабочем каталоге)
+	изменено:      datasets.dvc
+
+Неотслеживаемые файлы:
+  (используйте «git add <файл>...», чтобы добавить в то, что будет включено в коммит)
+	.gitignore
+	datasets.txt
+	google-cloud-cli-402.0.0-linux-x86_64.tar.gz
+	google-cloud-sdk/
+	scpipt.py
+	script.py
+	script2.py
+	script3.py
+	script4.py
+
+индекс пуст (используйте «git add» и/или «git commit -a»)
+anastasia@anastasia-VirtualBox:~/git/lab4$ git add datasets.dvc 
+anastasia@anastasia-VirtualBox:~/git/lab4$ git commit -m "df2"
+[master e0cf34e] df2
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+anastasia@anastasia-VirtualBox:~/git/lab4$ git push -r mydf
+error: unknown switch `r'
+использование: git push [<опции>] [<репозиторий> [<спецификатор-ссылки>...]]
+
+    -v, --verbose         быть многословнее
+    -q, --quiet           тихий режим
+    --repo <репозиторий>  репозиторий
+    --all                 отправить все ссылки
+    --mirror              сделать зеркало всех ссылок
+    -d, --delete          удалить ссылки
+    --tags                отправить метки (нельзя использовать вместе с --all или --mirror)
+    -n, --dry-run         пробный запуск
+    --porcelain           машиночитаемый вывод
+    -f, --force           принудительное обновление
+    --force-with-lease[=<refname>:<expect>]
+                          требовать, чтобы старое значение ссылки было ожидаемым
+    --force-if-includes   require remote updates to be integrated locally
+    --recurse-submodules (check|on-demand|no)
+                          управление рекурсивной отправкой подмодулей
+    --thin                использовать тонкие пакеты
+    --receive-pack <receive-pack>
+                          путь к программе упаковки на сервере
+    --exec <receive-pack>
+                          путь к программе упаковки на сервере
+    -u, --set-upstream    установить вышестоящую ветку для git pull/status
+    --progress            принудительно выводить прогресс
+    --prune               почистить локально удаленные ссылки
+    --no-verify           пропустить перехватчик pre-push
+    --follow-tags         отправить пропущенные, но нужные метки
+    --signed[=(yes|no|if-asked)]
+                          подписать отправку с помощью GPG
+    --atomic              запросить выполнение атомарной транзакции на внешней стороне
+    -o, --push-option <зависит-от-сервера>
+                          передаваемые опции
+    -4, --ipv4            использовать только IPv4 адреса
+    -6, --ipv6            использовать только IPv6 адреса
+
+anastasia@anastasia-VirtualBox:~/git/lab4$ dvc push -r mydf
+100% Transferring|██████████████████████████████|1/1 [00:02<00:00,  2.28s/file]
+100%|██████████|/home/anastasia/git/lab4/.dvc133/133 [00:01<00:00,     98.1B/s]
+
+
+
+
+
+
+
+
+
+ERROR: interrupted by the user                                                 
+anastasia@anastasia-VirtualBox:~/git/lab4$ dvc push -r mydf                    
+Everything is up to date.                                                      
+anastasia@anastasia-VirtualBox:~/git/lab4$ git log --oneline
+e0cf34e (HEAD -> master) df2
+b41fcee df
+ab19ba7 df
+e737c25 df4
+bcbda81 Google Disk
+f81b76a Init dvc
+7d6a8e1 df
+8a1c4a3 df
+anastasia@anastasia-VirtualBox:~/git/lab4$ cat dataseta.dvc
+cat: dataseta.dvc: Нет такого файла или каталога
+anastasia@anastasia-VirtualBox:~/git/lab4$ cat datasets.dvc
+outs:
+- md5: ae2117471c212f38c42b861f59eb6b31.dir
+  size: 72574
+  nfiles: 2
+  path: datasets
+anastasia@anastasia-VirtualBox:~/git/lab4$ nano script3.py
+anastasia@anastasia-VirtualBox:~/git/lab4$ python3 ./script3.py
+anastasia@anastasia-VirtualBox:~/git/lab4$ git status
+Текущая ветка: master
+Неотслеживаемые файлы:
+  (используйте «git add <файл>...», чтобы добавить в то, что будет включено в коммит)
+	.gitignore
+	datasets.txt
+	google-cloud-cli-402.0.0-linux-x86_64.tar.gz
+	google-cloud-sdk/
+	scpipt.py
+	script.py
+	script2.py
+	script3.py
+	script4.py
+
+индекс пуст, но есть неотслеживаемые файлы
+(используйте «git add», чтобы проиндексировать их)
+anastasia@anastasia-VirtualBox:~/git/lab4$ dvc add datasets
+100% Adding...|███████████████████████████████████████|1/1 [00:00, 14.04file/s]
+                                                                               
+To track the changes with git, run:
+
+	git add datasets.dvc
+
+To enable auto staging, run:
+
+	dvc config core.autostage true
+anastasia@anastasia-VirtualBox:~/git/lab4$ git status
+Текущая ветка: master
+Изменения, которые не в индексе для коммита:
+  (используйте «git add <файл>...», чтобы добавить файл в индекс)
+  (используйте «git restore <файл>...», чтобы отменить изменения в рабочем каталоге)
+	изменено:      datasets.dvc
+
+Неотслеживаемые файлы:
+  (используйте «git add <файл>...», чтобы добавить в то, что будет включено в коммит)
+	.gitignore
+	datasets.txt
+	google-cloud-cli-402.0.0-linux-x86_64.tar.gz
+	google-cloud-sdk/
+	scpipt.py
+	script.py
+	script2.py
+	script3.py
+	script4.py
+
+индекс пуст (используйте «git add» и/или «git commit -a»)
+anastasia@anastasia-VirtualBox:~/git/lab4$ git commit -m "df3"
+Текущая ветка: master
+Изменения, которые не в индексе для коммита:
+  (используйте «git add <файл>...», чтобы добавить файл в индекс)
+  (используйте «git restore <файл>...», чтобы отменить изменения в рабочем каталоге)
+	изменено:      datasets.dvc
+
+Неотслеживаемые файлы:
+  (используйте «git add <файл>...», чтобы добавить в то, что будет включено в коммит)
+	.gitignore
+	datasets.txt
+	google-cloud-cli-402.0.0-linux-x86_64.tar.gz
+	google-cloud-sdk/
+	scpipt.py
+	script.py
+	script2.py
+	script3.py
+	script4.py
+
+индекс пуст (используйте «git add» и/или «git commit -a»)
+anastasia@anastasia-VirtualBox:~/git/lab4$ dvc push -r mydf
+2 files pushed                                                                 
+anastasia@anastasia-VirtualBox:~/git/lab4$ git log --oneline                   
+e0cf34e (HEAD -> master) df2
+b41fcee df
+ab19ba7 df
+e737c25 df4
+bcbda81 Google Disk
+f81b76a Init dvc
+7d6a8e1 df
+8a1c4a3 df
+anastasia@anastasia-VirtualBox:~/git/lab4$ git add datasets.dvc
+anastasia@anastasia-VirtualBox:~/git/lab4$ git commit -m "df3"
+[master 5fe50b2] df3
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+anastasia@anastasia-VirtualBox:~/git/lab4$ dvc push -r mydf
+Everything is up to date.                                                      
+anastasia@anastasia-VirtualBox:~/git/lab4$ git log --oneline
+5fe50b2 (HEAD -> master) df3
+e0cf34e df2
+b41fcee df
+ab19ba7 df
+e737c25 df4
+bcbda81 Google Disk
+f81b76a Init dvc
+7d6a8e1 df
+8a1c4a3 df
+anastasia@anastasia-VirtualBox:~/git/lab4$ nano script4.py
+anastasia@anastasia-VirtualBox:~/git/lab4$ python3 ./script4.py
+
+/home/anastasia/.local/lib/python3.10/site-packages/sklearn/preprocessing/_encoders.py:868: FutureWarning: `sparse` was renamed to `sparse_output` in version 1.2 and will be removed in 1.4. `sparse_output` is ignored unless you leave `sparse` to its default value.
+  warnings.warn(
+anastasia@anastasia-VirtualBox:~/git/lab4$ 
+anastasia@anastasia-VirtualBox:~/git/lab4$ pip install -U scikit-learn
+Defaulting to user installation because normal site-packages is not writeable
+Requirement already satisfied: scikit-learn in /home/anastasia/.local/lib/python3.10/site-packages (1.2.2)
+Requirement already satisfied: numpy>=1.17.3 in /usr/local/lib/python3.10/dist-packages (from scikit-learn) (1.24.3)
+Requirement already satisfied: scipy>=1.3.2 in /home/anastasia/.local/lib/python3.10/site-packages (from scikit-learn) (1.10.1)
+Requirement already satisfied: joblib>=1.1.1 in /home/anastasia/.local/lib/python3.10/site-packages (from scikit-learn) (1.2.0)
+Requirement already satisfied: threadpoolctl>=2.0.0 in /home/anastasia/.local/lib/python3.10/site-packages (from scikit-learn) (3.1.0)
+anastasia@anastasia-VirtualBox:~/git/lab4$ python3 ./script4.py
+/home/anastasia/.local/lib/python3.10/site-packages/sklearn/preprocessing/_encoders.py:868: FutureWarning: `sparse` was renamed to `sparse_output` in version 1.2 and will be removed in 1.4. `sparse_output` is ignored unless you leave `sparse` to its default value.
+  warnings.warn(
+anastasia@anastasia-VirtualBox:~/git/lab4$ git status
+Текущая ветка: master
+Неотслеживаемые файлы:
+  (используйте «git add <файл>...», чтобы добавить в то, что будет включено в коммит)
+	.gitignore
+	datasets.txt
+	google-cloud-cli-402.0.0-linux-x86_64.tar.gz
+	google-cloud-sdk/
+	scpipt.py
+	script.py
+	script2.py
+	script3.py
+	script4.py
+
+индекс пуст, но есть неотслеживаемые файлы
+(используйте «git add», чтобы проиндексировать их)
+anastasia@anastasia-VirtualBox:~/git/lab4$ dvc add datasets
+100% Adding...|███████████████████████████████████████|1/1 [00:00, 14.91file/s]
+                                                                               
+To track the changes with git, run:
+
+	git add datasets.dvc
+
+To enable auto staging, run:
+
+	dvc config core.autostage true
+anastasia@anastasia-VirtualBox:~/git/lab4$ git status
+Текущая ветка: master
+Изменения, которые не в индексе для коммита:
+  (используйте «git add <файл>...», чтобы добавить файл в индекс)
+  (используйте «git restore <файл>...», чтобы отменить изменения в рабочем каталоге)
+	изменено:      datasets.dvc
+
+Неотслеживаемые файлы:
+  (используйте «git add <файл>...», чтобы добавить в то, что будет включено в коммит)
+	.gitignore
+	datasets.txt
+	google-cloud-cli-402.0.0-linux-x86_64.tar.gz
+	google-cloud-sdk/
+	scpipt.py
+	script.py
+	script2.py
+	script3.py
+	script4.py
+
+индекс пуст (используйте «git add» и/или «git commit -a»)
+anastasia@anastasia-VirtualBox:~/git/lab4$ git add datasets.dvc
+anastasia@anastasia-VirtualBox:~/git/lab4$ git status
+Текущая ветка: master
+Изменения, которые будут включены в коммит:
+  (используйте «git restore --staged <файл>...», чтобы убрать из индекса)
+	изменено:      datasets.dvc
+
+Неотслеживаемые файлы:
+  (используйте «git add <файл>...», чтобы добавить в то, что будет включено в коммит)
+	.gitignore
+	datasets.txt
+	google-cloud-cli-402.0.0-linux-x86_64.tar.gz
+	google-cloud-sdk/
+	scpipt.py
+	script.py
+	script2.py
+	script3.py
+	script4.py
+
+anastasia@anastasia-VirtualBox:~/git/lab4$ git commit -m "df4"
+[master 151c6f9] df4
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+anastasia@anastasia-VirtualBox:~/git/lab4$ dvc push -r mydf
+2 files pushed                                                                 
+anastasia@anastasia-VirtualBox:~/git/lab4$ cat datasets.dvc                    
+outs:
+- md5: b2eb4f3eea6746a7892fe11ae964a7df.dir
+  size: 89863
+  nfiles: 2
+  path: datasets
+anastasia@anastasia-VirtualBox:~/git/lab4$ 
